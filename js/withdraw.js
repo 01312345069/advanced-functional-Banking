@@ -1,16 +1,17 @@
 /*
 1. add event handler with the withdraw button
+
 2. get the withdraw amount from the withdraw input field 
 
-2:9. convert unput into a number by parseFloat
-3. get previous withdraw total 
+3.  clear the withdraw input field
 
-4. calculate total  withdraw amount
-4:9 set total withdraw amount
-5. get the previous balance total
-6. calculate new balance total 
-6:6. set the new balance total
-7. clear the input field
+4. get previous withdraw total  
+
+5. calculate total  withdraw amount and set it to the withdraw total element.
+
+6. get previous balance
+
+7. Calculate new balance and set it to the balance total element
 */
 
 // step - 1:
@@ -19,7 +20,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const withdrawField = document.getElementById('withdraw-field');
     const newWithdrawAmountString = withdrawField.value;
     const newWithdrawAmount = parseFloat(newWithdrawAmountString);
-    // step-7:
+    // step-3:
     withdrawField.value = '';
 
     if (isNaN(newWithdrawAmount)) {
@@ -27,15 +28,21 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
         return;
     }
 
-    // step-3: 
+    // step-4: 
     const withdrawTotalElement = document.getElementById('withdraw-total');
     const previousWithdrawTotalString = withdrawTotalElement.innerText;
     const previousWihdrawTotal = parseFloat(previousWithdrawTotalString);
 
 
-    // step-5 
-    const balanceTotalElement = document.getElementById('balance-total');
-    const previousBalanceTotalString = balanceTotalElement.innerText;
+    // step - 5
+    const newWithdrawTotal = previousWihdrawTotal + newWithdrawAmount;
+    withdrawTotalElement.innerText = newWithdrawTotal;
+
+
+    // step-6:
+
+    const balanceElement = document.getElementById('balance-total');
+    const previousBalanceTotalString = balanceElement.innerText;
     const previousBalanceTotal = parseFloat(previousBalanceTotalString);
 
     if (newWithdrawAmount > previousBalanceTotal) {
@@ -43,14 +50,10 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
         return;
     }
 
-    // step-4:
-    const currentWithdrawTotal = previousWihdrawTotal + newWithdrawAmount;
-    withdrawTotalElement.innerText = currentWithdrawTotal;
 
-
-    // step-6 
+    // step-7
     const newBalanceTotal = previousBalanceTotal - newWithdrawAmount;
-    balanceTotalElement.innerText = newBalanceTotal
+    balanceElement.innerText = newBalanceTotal;
 
 
 
