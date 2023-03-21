@@ -11,13 +11,13 @@
 
 <body>
     <header>
-        <h1 class="text-5xl text-center mt-4">advanced functional <span class="text-green-500 font-medium">Banking
+        <h1 class="text-5xl text-center mt-8">advanced functional <span class="text-green-500 font-medium">Banking
                 System</span></h1>
     </header>
-    <main>
+    <main class="w-3/4 mx-auto">
         <!-- balance & transaction interface  -->
         <section class="mt-8">
-            <div class="grid grid-cols-3 gap-4 w-3/4 mx-auto text-white">
+            <div class="grid grid-cols-3 gap-4  text-white">
                 <div class="bg-red-400 p-8 rounded-lg">
                     <h4 class="text-3xl">Deposit</h4>
                     <h2 class="text-5xl font-medium">$ <span id="deposit-total">00</span></h2>
@@ -33,7 +33,7 @@
             </div>
         </section>
         <!-- deposit and Withdraw section  -->
-        <section class="mt-8 w-3/4 mx-auto">
+        <section class="mt-8 ">
             <div class="grid grid-cols-2 gap-4">
                 <div class="bg-violet-400 p-8 rounded-lg">
                     <h3 class="text-4xl text-white mb-4">Your Deposit</h3>
@@ -45,7 +45,7 @@
                 <div class="bg-amber-400 p-8 rounded-lg">
                     <h3 class="text-4xl text-white mb-4">Your Withdraw</h3>
                     <input id="withdraw-field" class="w-3/4 px-4 py-3 rounded block" type="text"
-                        placeholder="$ Amount you want to Withdraw">
+                        placeholder="$ Amount you want to withdraw">
                     <button id="btn-withdraw"
                         class="bg-amber-600 px-6 py-2 text-white rounded-lg mt-4 font-medium hover:bg-sky-400">Withdraw</button>
                 </div>
